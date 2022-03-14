@@ -11,7 +11,9 @@ export const DealCard = ({ deal, handleDeleteDeal }) => {
         <div className="dealCard">
             <Card border="primary" style={{ width: '18rem' }}>
             <Card.Header as="h6">Found by: {deal.user?.name}</Card.Header>
-            <Card.Img variant="top" src={deal.image} />
+            {/* <Card.Img variant="top" src={deal.image} /> */}
+            {/* <Image src={deal.image} className='img-fluid shadow-4'/> */}
+            <img src={deal.image} className='img-thumbnail mx-auto d-block' alt='...' style={{ maxWidth: '12rem' }} />
             <Card.Body>
                 <Card.Title>{deal.title}</Card.Title>
                 <Card.Text style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>{deal.originalPrice}</Card.Text>
