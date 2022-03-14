@@ -1,0 +1,22 @@
+.dealCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0.1rem;
+    padding: 1rem;
+  }
+
+.newDealBtn {
+    display: flex;
+    justify-content: right;
+    padding-right: 2%;
+  }
+
+  Button {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+  }
