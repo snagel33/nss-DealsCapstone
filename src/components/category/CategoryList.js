@@ -49,6 +49,8 @@ export const CategoryList = () => {
         setDeals(newDeal);
     };
 
+    const [category, setCategory] = useState(false);
+
     const categoryId = deal.categoryId
 
     return (
@@ -56,7 +58,7 @@ export const CategoryList = () => {
         <form className="categoryForm">
                     <h2 className="dealForm__title">Product Category</h2>
             <fieldset>
-				<div className="form-group">
+				<div className="form-group" onClick={() => setCategory((prev) => !prev)}>
 					<label htmlFor="categoryId">Product category: </label>
 					<select value={deal.categoryId} name="category" id="categoryId" onChange={handleControlledInputChange} className="form-control" >
 						<option value="0">Please choose the product category</option>
