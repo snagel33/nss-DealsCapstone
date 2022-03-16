@@ -9,3 +9,13 @@ export const getAllCategories = () => {
     return fetch(`${remoteURL}/categories`)
         .then(res => res.json())
 }
+
+export const getDealsByCategoryId = () => {
+    return fetch(`${remoteURL}/deals?_expand=category`)
+        .then(res => res.json())
+}
+
+export const getAllDealsByCategoryId = () => {
+    return fetch(`${remoteURL}/deals?_expand=category`)
+        .then(res => res.json())
+}

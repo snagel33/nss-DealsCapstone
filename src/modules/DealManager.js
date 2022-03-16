@@ -26,3 +26,5 @@ export const addDeal = (newDeal) => {
         body: JSON.stringify(newDeal)
     }).then(response => response.json())
 }
+
+//fetch deal by categories 
