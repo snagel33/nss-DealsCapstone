@@ -14,6 +14,7 @@ export const NavBar = () => {
                 <Nav.Link href="/deals">Deals</Nav.Link>
                 <Nav.Link href="/categories">Categories</Nav.Link>
                 <Nav.Link href="/forum">Forum</Nav.Link>
+                <Nav.Link href="/clearUser">Sign Out</Nav.Link>
                 </Nav>
                 </Container>
             </Navbar>
