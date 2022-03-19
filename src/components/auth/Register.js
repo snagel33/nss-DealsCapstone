@@ -55,7 +55,7 @@ export const Register = ({setAuthUser}) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for NSS Kennels</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for Deals Site Title</h1>
                 <fieldset>
                     <label htmlFor="firstName"> Username </label>
                     <input ref={name} type="text" name="name" className="form-control" placeholder="Username" required autoFocus />
