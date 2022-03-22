@@ -8,6 +8,9 @@ import { CategoryList } from "./components/category/CategoryList"
 import { ForumList } from "./components/forum/ForumList"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
+import { UserCard } from "./components/user/UserCard"
+import { UserList } from "./components/user/UserList"
+import { UserEditForm } from "./components/user/UserEditForm"
 
 
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
@@ -39,6 +42,10 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                 <Route path="/deals" element={<PrivateRoute><DealList /></PrivateRoute>} />
                 <Route path="/deals/create" element={<PrivateRoute><DealForm /></PrivateRoute>} />
                 <Route path="/categories" element={<PrivateRoute><CategoryList /></PrivateRoute>} />
+                {}
+                <Route path="/users" element={<PrivateRoute><UserList /></PrivateRoute>} />
+                <Route path="/users/:userId/edit" element={<PrivateRoute><UserEditForm /></PrivateRoute>} />
+                {}
                 <Route path="/forum" element={<PrivateRoute><ForumList /></PrivateRoute>} />
             </Routes>
         </>
