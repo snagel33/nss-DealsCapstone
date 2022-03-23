@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Stack } from "react-bootstrap";
 
 
-export const DealCard = ({ deal, handleDeleteDeal }) => {
+export const DealCard = ({ deal, userFavorites, handleDeleteDeal, handleAddFavoriteDeal }) => {
     return (
         <>
         <div className="dealContainer" style={{ display: "inline-flex", alignItems: "center"}}>
@@ -29,7 +29,7 @@ export const DealCard = ({ deal, handleDeleteDeal }) => {
                     <Card.Link href="#">Another Link</Card.Link>
                 </Card.Body> */}
                 <Stack gap={1} className="col-md-5 mx-auto">
-                <Button variant="primary" size="sm">Favorite Deal</Button>
+                <Button variant="primary" size="sm" onClick={() => handleAddFavoriteDeal(userFavorites.id)}>Favorite Deal</Button>
                 <Button variant="success" href={deal.link} size="sm">View Deal</Button>
                 <Button variant="danger" size="sm" onClick={() => handleDeleteDeal(deal.id)}>Delete Deal</Button>
                 </Stack>
