@@ -1,4 +1,7 @@
+import React, {createContext} from "react"
+
 const remoteURL = "http://localhost:8088"
+export const DealContext = createContext()
 
 export const getDealById = (dealId) => {
     return fetch(`${remoteURL}/deals/${dealId}?_expand=user&_expand=category`)
@@ -26,5 +29,30 @@ export const addDeal = (newDeal) => {
         body: JSON.stringify(newDeal)
     }).then(response => response.json())
 }
+
+export const getFavoriteDeals = () => {
+    return fetch(`${remoteURL}/userFavorites?_expand=user&expand=deal`)
+    .then(res => res.json())
+};
+
+export const getFavoritesByUserId = (userId) => {
+    return fetch(`${remoteURL}/userFavorites?_expand=user&expand=deal`)
+    .then(res => res.json())
+    .then(favoritesArray => {
+        return favoritesArray.filter(favorite => favorite.userId === userId)
+    })
+};
+
+export const addFavoriteDeal = (newFavoriteDeal) => {
+    return fetch(`${remoteURL}/userFavorites`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newFavoriteDeal)
+    }).then(response => response.json())
+};
+
+
 
 //fetch deal by categories 

@@ -1,12 +1,15 @@
+import React, {createContext} from "react";
+
 const remoteURL = "http://localhost:8088"
+export const UserContext = createContext();
 
 export const getUserById = (userId) => {
     return fetch(`${remoteURL}/users/${userId}`)
         .then(res => res.json())
 }
 
-export const getAllUsers = () => {
-    return fetch(`${remoteURL}/users`)
+export const getAllUsers = (sessionUserId) => {
+    return fetch(`${remoteURL}/users/?id=${sessionUserId}`)
         .then(res => res.json())
 }
 
