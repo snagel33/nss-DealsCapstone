@@ -48,7 +48,7 @@ fieldset {
 
 .form--login {
     background-position-x: center;
-    background-image: url(DealsDailyLogo.png);
+    /* background-image: url(Gameshack.png); */
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;

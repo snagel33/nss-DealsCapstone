@@ -30,7 +30,7 @@ export const addDeal = (newDeal) => {
     }).then(response => response.json())
 }
 
-export const getFavoriteDeals = () => {
+export const getAllFavorites = () => {
     return fetch(`${remoteURL}/userFavorites?_expand=user&expand=deal`)
     .then(res => res.json())
 };
@@ -43,14 +43,30 @@ export const getFavoritesByUserId = (userId) => {
     })
 };
 
-export const addFavoriteDeal = (newFavoriteDeal) => {
+export const addFavorite = (newFavorite) => {
     return fetch(`${remoteURL}/userFavorites`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(newFavoriteDeal)
+    body: JSON.stringify(newFavorite)
     }).then(response => response.json())
+};
+
+export const removeFavorite = (id) => {
+    return fetch(`${remoteURL}/userFavorites/${id}`, {
+        method: "DELETE"
+    }).then(result => result.json())
+};
+
+export const updateDeal = (editedDeal) => {
+    return fetch(`${remoteURL}/deals/${editedDeal.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(editedDeal)
+    }).then(data => data.json());
 };
 
 

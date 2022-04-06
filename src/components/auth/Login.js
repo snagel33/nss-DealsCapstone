@@ -38,8 +38,8 @@ export const Login = ({setAuthUser}) => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Deal Site Title Placeholder</h1>
-                    <h2>Please sign in</h2>
+                    {/* <h1>GameDealsDaily.com</h1> */}
+                    <h1>Please sign in</h1>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"
