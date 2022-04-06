@@ -20,11 +20,18 @@ export const NavBar = () => {
         history.push("/");
     };
 
+    var icon = (
+        <span class="logo">
+          <a href="/">
+            <img src="../Gameshack.png" height="150" width="150" alt="text here" /></a>
+        </span>
+      );
+
     return (
         <ul className="navbar">
               <Navbar bg="primary" variant="dark">
                 <Container>
-                <Navbar.Brand href="/home">Site Logo</Navbar.Brand>
+                <Navbar.Brand href="/home">{icon}</Navbar.Brand>
                 <Nav className="me-auto">
                 {/* <Nav.Link href="/home">Home</Nav.Link> */}
                 <Nav.Link href="/deals">Deals</Nav.Link>

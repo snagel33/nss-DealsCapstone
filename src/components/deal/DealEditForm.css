@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.form-group {
+.formgrid {
     width: 500px;
 }
 
@@ -16,7 +16,7 @@
     width: fit-content;
 }
 
-.DealEditForm {
+.dealEditForm {
     display: flex;
     flex-direction: column;
     position: absolute;

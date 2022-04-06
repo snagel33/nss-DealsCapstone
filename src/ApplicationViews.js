@@ -11,6 +11,7 @@ import { Register } from "./components/auth/Register"
 import { UserCard } from "./components/user/UserCard"
 import { UserList } from "./components/user/UserList"
 import { UserEditForm } from "./components/user/UserEditForm"
+import { DealEditForm } from "./components/deal/DealEditForm"
 
 
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
@@ -39,8 +40,11 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                 {}
                 <Route exact path="/" element={<PrivateRoute><DealList /></PrivateRoute>} />
                 <Route exact path="/home" element={<PrivateRoute><DealList /></PrivateRoute>} />
+                {}
                 <Route path="/deals" element={<PrivateRoute><DealList /></PrivateRoute>} />
                 <Route path="/deals/create" element={<PrivateRoute><DealForm /></PrivateRoute>} />
+                <Route path="/deals/:dealId/edit" element={<PrivateRoute><DealEditForm /></PrivateRoute>} />
+                {}
                 <Route path="/categories" element={<PrivateRoute><CategoryList /></PrivateRoute>} />
                 {}
                 <Route path="/users" element={<PrivateRoute><UserList /></PrivateRoute>} />

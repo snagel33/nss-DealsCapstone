@@ -11,7 +11,7 @@ import { getAllCategories } from '../../modules/CategoryManager';
 
 export const DealForm = () => {
     const [deal, setDeal] = useState({
-        userId: 0,
+        userId: "",
         image: "",
         title: "",
         price: "",
@@ -60,62 +60,10 @@ export const DealForm = () => {
     };
 
     return (
-        // <Form>
-		// 	<Form.Group className='mb-3' controlId="userId">
-        //         <div className="form-group">
-		// 			<label htmlFor="userId">Posted by: </label>
-		// 			<select value={deal.userId} name="userId" id="userId" onChange={handleControlledInputChange} className="form-control" >
-		// 				<option value="0">Select User</option>
-		// 				{users.map(c => (
-		// 					<option key={c.id} value={c.id}>
-		// 						{c.name}
-		// 					</option>
-		// 				))}
-		// 			</select>
-		// 		</div>
-        //     </Form.Group>
-
-        //     <Form.Group className="mb-3" id="image">
-        //         <Form.Label>Product Image Link</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the product's image link" />
-        //     </Form.Group>
-
-        //     <Form.Group className="mb-3" controlId="title">
-        //         <Form.Label>Product Name</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the product's name" />
-        //     </Form.Group>
-
-        //     <Row className="mb-3">
-        //     <Form.Group as={Col} controlId="price">
-        //         <Form.Label>Product Sale Price</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the product's sale price" />
-        //     </Form.Group>
-
-        //     <Form.Group as={Col} controlId="originalPrice">
-        //         <Form.Label>Product Original Price</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the product's original price" />
-        //     </Form.Group>
-        //     </Row>
-
-        //     <Form.Group className="mb-3" controlId="link">
-        //         <Form.Label>Product Link</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the product's website link" />
-        //     </Form.Group>
-
-        //     <Form.Group className="mb-3" controlId="vendor">
-        //         <Form.Label>Product Vendor</Form.Label>
-        //         <Form.Control type="text" placeholder="Please enter the vendor for the product" />
-        //     </Form.Group>
-
-        //     <Button variant="primary" onClick={handleClickSaveDeal}>
-        //         Submit Deal
-        //     </Button>
-        // </Form>
-
         <form className="dealForm">
 			<h2 className="dealForm__title">Add New Deal</h2>
             <fieldset>
-				<div className="form-group">
+				{/* <div className="form-group">
 					<label htmlFor="userId">Confirm user: </label>
 					<select value={deal.userId} name="customer" id="userId" onChange={handleControlledInputChange} className="form-control" >
 						<option value="0">Please confirm the user</option>
@@ -125,6 +73,10 @@ export const DealForm = () => {
 							</option>
 						))}
 					</select>
+				</div> */}
+				<div className="form-group">
+					<label htmlFor="userId">Confirm user:</label>
+					<input type="text" id="userId" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Please confirm user" value={deal.userId} />
 				</div>
 			</fieldset>
             <fieldset>
@@ -176,19 +128,6 @@ export const DealForm = () => {
 					<input type="text" id="vendor" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Please enter product vendor here" value={deal.vendor} />
 				</div>
 			</fieldset>
-			{/* <fieldset>
-				<div className="form-group">
-					<label htmlFor="location">Assign to location: </label>
-					<select value={animal.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
-						<option value="0">Select a location</option>
-						{locations.map(l => (
-							<option key={l.id} value={l.id}>
-								{l.name}
-							</option>
-						))}
-					</select>
-				</div>
-			</fieldset> */}
 
 			<button className="btn-primary"
 				onClick={handleClickSaveDeal}>

@@ -5,9 +5,9 @@ import { Image } from "react-bootstrap";
 import { Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { DealCard } from "../deal/DealCard";
-import { getAllDeals, deleteDeal } from "../../modules/DealManager";
+import { getAllDeals, deleteDeal, getAllFavorites } from "../../modules/DealManager";
 import { useNavigate } from "react-router-dom";
-// import "./DealCard.css"
+import "./UserCard.css"
 
 // export const UserCard = () => (
 //     <section className="user">
@@ -53,8 +53,11 @@ export const UserCard = ({user}) => {
 
 export const DealList = () => {
     const [deals, setDeals] = useState([]);
+    const [favorites, setFavorites] = useState([]);
+    const sessionUser = JSON.parse(sessionStorage.getItem('deal_user'));
+    const sessionUserId = sessionUser.id;
     const getDeals = () => {
-        return getAllDeals().then(dealsFromAPI => {
+        return getAllFavorites().then(dealsFromAPI => {
             setDeals(dealsFromAPI);
             });
         };
@@ -74,15 +77,11 @@ export const DealList = () => {
 
     return (
         <>
-        <section className="newDealBtn">
-            <Button variant="primary" size="sm" onClick={() => {navigate("/deals/create")}}>Add New Deal</Button>
-        </section>
-
         <div className="container-cards" >
             {deals.map(deal => 
                 <DealCard 
                 key={deal.id} 
-                deal={deal} 
+                deal={deal}
                 handleDeleteDeal={handleDeleteDeal}/>)}
         </div>
         </>
